@@ -1,0 +1,105 @@
+/*Responsive Text Size*/
+html {
+  @include media-breakpoint-down(sm) {
+    font-size: 88%;
+  }
+}
+
+body {
+
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
+  font-size: $body-font-size;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin-bottom: rem(16);
+  a{
+    color: $link-color;
+    text-decoration: underline;
+    &:hover,
+    &:focus{
+      color:$link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
+h1 {
+  font-weight: 700;
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size;
+  
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+  
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size;
+  
+}
+
+h5,
+.h5 {
+  color: $dark-grey;
+  font-size: $h5-font-size;
+  
+}
+
+h6,
+.h6 {
+  color: $dark-grey;
+  font-size: $h6-font-size;
+  
+}
+
+p {
+  a{
+    color: $link-color;
+    text-decoration: underline;
+    &:hover,
+    &:focus{
+      color:$link-hover-color;
+      text-decoration: none;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+*[tabindex="0"]:not(input),
+input[type="submit"],
+button,
+a {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus:not(:active):not(:hover) {
+    outline: 2px dashed red;
+    outline-offset: 1px;
+  }
+}
+
+a {
+  &:focus {
+    color: $link-hover-color;
+  }
+}
