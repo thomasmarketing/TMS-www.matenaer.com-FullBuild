@@ -130,13 +130,14 @@
   display: inline-block;
   transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
   border: 0;
+  text-decoration: none;
   &::before{
     content: "";
     position: absolute;
-    left: -0.563;
-    bottom: -0.438;
-    width: calc(100% + 0.563rem);
-    height: calc(100% + 0.438rem);
+    left: rem(-8);
+		bottom: rem(-5);
+		width: calc(100% + 8px);
+		height: calc(100% + 5px);
     background: transparent; 
     z-index: -1;
     border-radius: inherit;

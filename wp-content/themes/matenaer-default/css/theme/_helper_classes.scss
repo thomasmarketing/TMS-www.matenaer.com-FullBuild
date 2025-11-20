@@ -4,6 +4,12 @@
   text-align: center;
   margin: 0 auto rem(15);
 }
+.right-img{
+  display: block;
+  float: none;
+  text-align: center;
+  margin: 0 auto rem(15);
+}
 
 .alignleft {
   display: block;
@@ -23,18 +29,27 @@
   .alignright {
     display: block;
     float: right;
-    margin-bottom: rem(15);
-    margin-left: rem(15);
+    margin-bottom: rem(20);
+    margin-left: rem(20);
   }
   .alignleft {
     display: block;
     float: left;
-    margin-bottom: rem(15);
-    margin-right: rem(15);
+    margin-bottom: rem(20);
+    margin-right: rem(20);
   }
   .aligncenter {
     display: block;
     margin: 0 auto;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+   .right-img {
+    display: block;
+    float: right;
+    margin-bottom: rem(20);
+    margin-left: rem(20);
   }
 }
 

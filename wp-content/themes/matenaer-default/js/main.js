@@ -44,6 +44,8 @@
     $(this).siblings('.m-subnav-arrows').trigger('click');
   });
 
+  
+
   $('#main-menu .menu-item-has-children > a').each(function() {
      var parentHref = $(this).attr('href');
      if (parentHref == "#" || !parentHref ) {
@@ -805,16 +807,55 @@
   });
 
   // Industries We Serve Module
-  $('.industries-we-serve-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
+  // $('.industries-we-serve-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
 
-  $('.industries-we-serve-module .tab-pane:not(:last-child) div[role="tabpanel"] a:last-of-type').on('blur', function() {
-    $('.industries-we-serve-module .nav-pills-custom a.active').next('.nav-link').trigger('click');
+  // $('.industries-we-serve-module .tab-pane:not(:last-child) div[role="tabpanel"] a:last-of-type').on('blur', function() {
+  //   $('.industries-we-serve-module .nav-pills-custom a.active').next('.nav-link').trigger('click');
+  //   setTimeout(function() {
+  //     $('.industries-we-serve-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
+  //   }, 300);
+
+  //   $('.industries-we-serve-module .nav-pills-custom a.active').attr('tabindex', '0').focus();
+  // });
+
+  
+
+  // Homepage Capability Module
+  $('.homepage-capabilities-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
+
+  $('.homepage-capabilities-module .tab-pane:not(:last-child) div[role="tabpanel"] a:last-of-type').on('blur', function() {
+    $('.homepage-capabilities-module .nav-pills-custom a.active').next('.nav-link').trigger('click');
     setTimeout(function() {
-      $('.industries-we-serve-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
+      $('.homepage-capabilities-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
     }, 300);
 
-    $('.industries-we-serve-module .nav-pills-custom a.active').attr('tabindex', '0').focus();
+    $('.homepage-capabilities-module .nav-pills-custom a.active').attr('tabindex', '0').focus();
+
   });
+
+  //  TAB BACKGROUND CHANGE (this must be OUTSIDE the blur function)
+$('.homepage-capabilities-module .nav-pills-custom .nav-link').on('click', function () {
+    var bg = $(this).data('bg');
+
+    $('.homepage-capabilities-module .nav-pills-custom').css({
+        "background-image": bg,
+        "background-size": "cover",
+        "background-position": "center",
+        "transition": "background-image 0.4s ease-in-out"
+    });
+});
+
+// 🔥 Apply initial (active tab) background on page load
+var initialBG = $('.homepage-capabilities-module .nav-pills-custom .nav-link.active').data('bg');
+if(initialBG){
+    $('.homepage-capabilities-module .nav-pills-custom').css({
+        "background-image": initialBG,
+        "background-size": "cover",
+        "background-position": "center"
+    });
+}
+
+
 
   //destination page slider    
   $(document).ready(function() {
@@ -861,6 +902,61 @@
 
 
   });
+
+  
+  //Products Gallery with Thumbnails    
+  $(document).ready(function() {
+
+    $('.pgwt-slider-for').each(function(key, item) {
+
+      var sliderIdName = 'pgwt-slider' + key;
+      var sliderNavIdName = 'pgwt-sliderNav' + key;
+
+      this.id = sliderIdName;
+      $('.pgwt-slider-nav')[key].id = sliderNavIdName;
+
+      var sliderId = '#' + sliderIdName;
+      var sliderNavId = '#' + sliderNavIdName;
+
+      $(sliderId).slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: false,
+        asNavFor: sliderNavId,
+        adaptiveHeight:true,
+      });
+
+      $(sliderNavId).slick({
+        slidesToShow: 9,
+        slidesToScroll: 1,
+        asNavFor: sliderId,
+        prevArrow: '<span class="slick-prev-wrap"><a class="slick-prev" href="javascript:void(0)" aria-label="Previous">Prev</a></span>',
+        nextArrow: '<span class="slick-next-wrap"><a class="slick-next" href="javascript:void(0)" aria-label="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></span>',
+        dots: false,
+        focusOnSelect: true,
+        accessibility: true,
+        responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+      ]
+      });
+
+    });
+
+
+  });
+
 
 //destination page slider    
   $(document).ready(function() {
@@ -1401,22 +1497,36 @@ $('.rpm-items-wrap').slick({
   $('.camt-slider').slick({
     arrows: false,
         dots: true,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: 4,
+        slidesToScroll: 1,
         infinite: true,
         responsive: [
+           {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          }
+        },
         {
           breakpoint: 960,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 3
+            slidesToScroll: 1,
           }
         },
         {
-           breakpoint: 400,
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        },
+        {
+           breakpoint: 575,
            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1,
            }
         }
         ]

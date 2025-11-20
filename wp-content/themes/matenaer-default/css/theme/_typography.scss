@@ -29,37 +29,43 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font-weight: 700;
+  color: $white;
 }
 
 h2,
 .h2 {
   font-size: $h2-font-size;
+  color: $black;
+  font-family: $font-family-base;
   
 }
 
 h3,
 .h3 {
   font-size: $h3-font-size;
-  
+  color: $peacock;
 }
 
 h4,
 .h4 {
   font-size: $h4-font-size;
+  color: $black;
+  font-family: $font-family-base;
   
 }
 
 h5,
 .h5 {
-  color: $dark-grey;
+  color: $primary;
   font-size: $h5-font-size;
   
 }
 
 h6,
 .h6 {
-  color: $dark-grey;
+  color: $secondary;
   font-size: $h6-font-size;
+  font-family: $font-family-base;
   
 }
 

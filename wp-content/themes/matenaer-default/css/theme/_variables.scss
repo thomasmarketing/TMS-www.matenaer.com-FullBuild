@@ -7,7 +7,7 @@
 
 
 //Container Width
-$container-width : rem(1158);
+$container-width : rem(1192);
 
 // Colors
 $primary: #00476C;
@@ -36,9 +36,12 @@ $medium-green: #6CB33F;
 $off-black: #1C1C1C;
 $blur-grey:#EEEEEE;
 $faint-grey:#3E3E3E;
+$peacock:#007BA0;
+$sub-nav-bg:#F5F5F5;
+$nav-border:#C9C9C9;
 //Body Variables
 $body-bg : $white;
-$body-color: $dark-grey;
+$body-color: $black;
 
 
 // Link Colors
@@ -64,10 +67,10 @@ $font-weight-bolder:          bolder !default;
 $font-weight-base:            $font-weight-normal !default;
 $line-height-base:            1.5625 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                rem(30) !default;
-$h3-font-size:                rem(24) !default;
-$h4-font-size:                rem(20) !default;
+$h1-font-size:                rem(58) !default;
+$h2-font-size:                rem(52) !default;
+$h3-font-size:                rem(36) !default;
+$h4-font-size:                rem(28) !default;
 $h5-font-size:                rem(19) !default;
 $h6-font-size:                $font-size-base !default;
 
@@ -97,33 +100,45 @@ $blockquote-font-size:        $font-size-base * 1.25 !default;
 
 /*Navigation Variables*/
 $nav-color: $black;
-$nav-hover-color: $blue;
+$nav-hover-color: $primary;
 $nav-spacing: rem(16.5) rem(20);
-$nav-font-size: rem(17);
-$nav-font-weight: 600;
+$mob-nav-font-size: rem(20.45);
+$mob-nav-line-height:rem(25);
+$nav-font-size: rem(18);
+$nav-line-height:rem(22);
+$nav-line-height-desk:rem(76);
+$nav-font-weight: 400;
 
 /*Darkbg color menu variables*/
 $navbar-dark-nav-color: $white;
 $navbar-dark-nav-hover-color: $black;
 
-$nav-subnav-width: rem(343);
+$nav-subnav-width: rem(250);
 $nav-subnav-radius: 0;
-$nav-subnav-color: $black;
-$nav-subnav-bg-color: $light-gray;
-$nav-subnav-hover-color: $white;
-$nav-subnav-hover-bg-color: $blue;
-$nav-subnav-font-size: rem(17);
-$nav-subnav-font-weight: 600;
-$nav-subnav-spacing: rem(16.5) rem(20);
+$nav-subnav-color: $secondary;
+$nav-subnav-bg-color: $white;
+$nav-subnav-hover-color: $primary;
+$nav-subnav-hover-bg-color: $sub-nav-bg;
+$mob-nav-subnav-font-size: rem(18.18);
+$mob-subnav-nav-line-height:rem(56.81);
+$nav-subnav-font-size: rem(16);
+$subnav-nav-line-height:rem(42);
+$nav-subnav-font-weight: 400;
+$nav-subnav-spacing: 0 rem(30);
 
 /*============= Navigation Variables Mobile ==========*/
-$nav-spacing-mobile: rem(8.5) rem(50) rem(8.5) rem(30);
-$nav-subnav-spacing-mobile: rem(8.5) rem(50) rem(8.5) rem(60);
+$nav-spacing-mobile: rem(15) rem(50) rem(15) rem(30);
+$nav-subnav-spacing-mobile: 0 rem(50) 0 rem(60);
 $nav-sub-subnav-spacing-left-mobile: rem(80);
 $nav-sub-sub-subnav-spacing-left-mobile: rem(100);
 
 /*============= TopLine Menu ==============*/
-$topnav-color: $white;
-$topnav-color-hover: $white;
+$topnav-color: $black;
+$topnav-sub-color: $secondary;
+$topnav-color-hover: $primary;
+$topnav-sub-color-hover: $primary;
 $topnav-spacing: 0 rem(20);
-$topnav-font-size: rem(17);
+$topnav-font-size: rem(18);
+$topnav-sub-font-size: rem(16);
+$topnav-line-height: rem(22);
+$topnav-sub-line-height: rem(42);

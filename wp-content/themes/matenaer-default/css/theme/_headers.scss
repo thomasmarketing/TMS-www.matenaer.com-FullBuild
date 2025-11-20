@@ -34,7 +34,7 @@
 .site-logo,
 .navbar-brand {
 	@include media-breakpoint-down(sm) {
-		margin: 0 auto rem(15);
+		margin: rem(10) auto;
 	}
 }
 
@@ -55,21 +55,21 @@
 .sh-email {
 	margin-right: rem(16);
 	font-size: rem(16);
-	color: white;
+	color: $black;
 	i,
 	.material-icons {
 		font-size: rem(24);
-		color: white;
+		color: $black;
 		vertical-align: middle;
 	}
 
 	a {
 		display: inline-block;
-		color: $white;
+		color: $black;
 		&:hover,
 		&:focus{
 			opacity: .9;
-			color: $white;
+			color: $black;
 		}
 	}
 
@@ -126,9 +126,23 @@
 }
 
 .header0 {
+	.site-logo{
+		display: inline-block;
+		vertical-align: top;
+		img{
+			display: block;
+			@include media-breakpoint-up(lg) {
+				max-width: rem(250);
+			}
+			@include media-breakpoint-up(xl) {
+				max-width: 100%;
+			}
+		}
+	}
 	.top-line {
 		padding: rem(10) 0;
-		background: $primary;
+		background: $white;
+		border-bottom: 1px solid $light-gray3;
 		transition: all 0.2s ease-in-out;
 		-moz-transition: all 0.2s ease-in-out;
 		-webkit-transition: all 0.2s ease-in-out;
@@ -157,6 +171,10 @@
 			}
 		}
 
+		@include media-breakpoint-up(lg) {
+			padding: 0;
+		}
+
 	}
 
 
@@ -172,10 +190,10 @@
 		}
 
 		@include media-breakpoint-up(md) {
-			color: $nav-color;
+			color: $primary;
 			&:hover,
 			&:focus {
-				color: $nav-hover-color;
+				color: $primary;
 			}
 		}
 	}
@@ -184,6 +202,14 @@
 		.top-line {
 			height: 0;
 			padding: 0;
+		}
+	}
+	.navbar-close-toggler{
+		.material-icons{
+			border: 2px solid $black;
+			border-radius: 3px;
+			color: $black;
+			font-size: 20px;
 		}
 	}
 
@@ -208,10 +234,10 @@
 		}
 	}
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		.site-logo,
 		.navbar-brand {
-			margin: 0 auto rem(15);
+			margin: 6px auto;
 		}
 
 		.navbar {
@@ -219,8 +245,8 @@
 		}
 
 		.navbar-light .navbar-toggler {
-		    color: white;
-		    border-color: white;
+		    color: $primary;
+		    border-color: transparent;
 		}
 
 		.top-line {
@@ -233,14 +259,14 @@
 		.utility-nav {
 			width: calc(100% + 30px);
 		    margin: 0 -15px;
-		    padding: 3.6px 15px;
-		    background: $primary;
+		    padding: 7px 15px;
+		    background: $blur-grey;
 		    justify-content: space-between;
 		    position: relative;
 
 		    i,
 			.material-icons {
-		    	color: white;
+		    	color: $primary;
 		    }
 
 		    &:after,
@@ -594,4 +620,51 @@
 	}
 
 	
+}
+.sh-navbar{
+	padding: 0 rem(15);
+	>.container{
+		justify-content: center;
+	}
+	@include media-breakpoint-up(lg) {
+		// padding: rem(29) rem(15);
+		>.container{
+		justify-content: space-between;
+	}
+	}
+	@include media-breakpoint-up(lg) {
+		padding: rem(29) rem(15);
+	}	
+}
+.sh-tl-utility{
+	display: flex;
+	align-items: center;
+	a{
+		text-decoration: none;
+		display: flex;
+		align-items: center;
+		img{
+			display: block;
+		}
+		&:hover,
+		&:focus{
+			opacity: 0.7;
+		}
+	}
+	>span{
+		margin-right: rem(30);
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+.shtl-ph{
+	span{
+		display: none;
+	}
+}
+.shtl-email{
+	span{
+		display: none;
+	}
 }
