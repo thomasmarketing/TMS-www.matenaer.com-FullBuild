@@ -15,9 +15,11 @@
 }
 body .gform_wrapper {
   max-width:100%;
-  padding: rem(12)  rem(20) rem(20);
-  margin: 0 0 rem(20);
-  background: $light-gray3;
+  padding: rem(50) rem(25);
+  margin: 0;
+  background: $white;
+  border-radius: 6px;
+  border: 2px solid #EAEAEA;
 }
 .gform_wrapper form {
   text-align:left;
@@ -252,7 +254,8 @@ body .gform_wrapper .top_label .gfield_label {
   display:inline-block;
   font-size: rem(16);
   font-weight: 400;
-  line-height:1.2;
+  line-height:rem(32);
+  color: $black;
   clear:both
 }
 .gform_wrapper .ginput_complex .ginput_left input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex .ginput_right input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex .ginput_right select, .gform_wrapper .ginput_complex input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex select {
@@ -601,24 +604,41 @@ body .gform_wrapper .gform_footer {
   text-align:center;
 }
 body .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_page_footer input.button, .gform_wrapper .gform_page_footer input[type=submit] {
-  width:auto;
-  margin:0;
-  border-radius: rem(3);
-  padding: em(11, 17) em(41.01, 17) !important;
-  display: inline-block;
+  border-radius: rem(50);
+  font-size: rem(20) !important;
+  line-height: rem(26) !important;
+  padding: rem(15) rem(25) !important;
   font-size: em(17);
   line-height: em(24, 17);
-  background-color: $medium-green;
-  border: 2px solid $medium-green;
+  border: 0 !important;
   color: $white;
-  font-weight: 500;
+  font-weight: bold;
   text-transform: capitalize;
+  background: $primary;
+  position: relative;
+  display: inline-block;
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
   //@include transition(all 0.2s linear);
+  &::before{
+    content: "";
+    position: absolute;
+    left: rem(-8);
+		bottom: rem(-5);
+		width: calc(100% + 8px);
+		height: calc(100% + 5px);
+    background: transparent; 
+    z-index: -1;
+    border-radius: inherit;
+    transition: background 0.4s ease-in-out;
+    }
   &:hover,
   &:focus {
-    border-color: $green;
-    background-color: $green;
-    color: $white;
+     color: $white !important;
+      background: $secondary;
+      border: 0;
+      &::before{
+        background: $cta;
+      }
   }
 }
 .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type="submit"]{
@@ -2865,7 +2885,7 @@ body {
 }
 
 .ginput_container_checkbox .gfield_checkbox .gfield-choice-input{
-  vertical-align: top!important;
+  vertical-align: middle !important;
 }
 
 
@@ -2919,4 +2939,8 @@ body {
   font-family: $font-family-base;
   font-size: rem(16) !important;
   line-height: normal !important;
+}
+
+.gform_wrapper.gravity-theme #field_submit, .gform_wrapper.gravity-theme .gform_footer{
+  justify-content: center;
 }

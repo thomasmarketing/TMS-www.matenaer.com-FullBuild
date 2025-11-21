@@ -656,6 +656,12 @@
 		&:last-child{
 			margin-right: 0;
 		}
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(60);
+			&:last-child{
+			margin-right: 0;
+		}
+		}
 	}
 }
 .shtl-ph{

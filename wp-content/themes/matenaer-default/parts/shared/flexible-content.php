@@ -77,7 +77,7 @@
 				    $link_title = $link['title'];
 				    $link_target = $link['target'] ? $link['target'] : '_self';
 				    ?>
-				    <a class="btn fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				    <a class="fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 
 				<?php 
@@ -87,7 +87,7 @@
 				    $link_title = $link['title'];
 				    $link_target = $link['target'] ? $link['target'] : '_self';
 				    ?>
-				    <a class="btn fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+				    <a class="fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 				<?php endif; ?>
 				</div>
 			 </div>
@@ -139,7 +139,7 @@
 		</section>	
 
  	<?php elseif( get_row_layout() == 'multiple_columns' ): ?>
- 		<section class="multiple-cols-module" id="multiple_columns<?php echo $i ?>" <?php if( get_sub_field('mc_bg_color')): ?>style="background-color: <?php echo get_sub_field('mc_bg_color');?>" <?php endif; ?>>
+ 		<section class="multiple-cols-module<?php if (get_sub_field('mc_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="multiple_columns<?php echo $i ?>" <?php if( get_sub_field('mc_bg_color')): ?>style="background-color: <?php echo get_sub_field('mc_bg_color');?>" <?php endif; ?>>
 
 		 	<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 		 		<div class="row">
@@ -2033,7 +2033,7 @@
 
 			                    <div class="tab-pane fade <?php if (get_row_index()==1): ?>show active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>" role="tab" aria-labelledby="v-pills-<?php echo get_row_index(); ?>-tab" role="tab">
 			                    	<div class="d-md-none" id="heading-<?php echo get_row_index() ?>">
-					                	<a class="col-12 nav-link mb-3 p-2" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
+					                	<a class="col-12 nav-link mb-3 p-2" aria-label ="<?php echo get_sub_field('hcapm_sub_heading') ?>" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
 					                    	<?php
 			                    	$image = get_sub_field('title_thumbnail_image');
 			                    	if ($image): ?>
@@ -2243,7 +2243,7 @@
 
 	<?php elseif( get_row_layout() == 'featured_listing_module' ): ?>
     	<?php $listingType = get_sub_field('flm_listing_type') ?>
-		<section class="featured-listing-module" id="<?php echo $listingType .  $i; ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
+		<section class="featured-listing-module<?php if (get_sub_field('flm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="<?php echo $listingType .  $i; ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 
 				<?php 
@@ -2588,7 +2588,7 @@
 
 
 	<?php elseif( get_row_layout() == 'content-associations_module_two' ): ?>
-		<section class="content-associations-module-two" <?php if (get_sub_field('cam_bg_color')): ?> style="background-color: <?php echo get_sub_field('cam_bg_color'); ?>"<?php endif ?>>
+		<section class="content-associations-module-two<?php if (get_sub_field('cam_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" <?php if (get_sub_field('cam_bg_color')): ?> style="background-color: <?php echo get_sub_field('cam_bg_color'); ?>"<?php endif ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 				<?php if (get_sub_field('cam_section_header')): ?>
 					<h2 class="cam-title"><?php echo get_sub_field('cam_section_header'); ?></h2>
@@ -2764,7 +2764,7 @@
 
 
 	<?php elseif( get_row_layout() == 'dest_resource_module' ): ?>
-		<section class="dest-resource-module" <?php if (get_sub_field('drm_bg_color')): ?>style="background-color:<?php echo get_sub_field('drm_bg_color'); ?>"<?php endif ?> >
+		<section class="dest-resource-module<?php if (get_sub_field('drm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" <?php if (get_sub_field('drm_bg_color')): ?>style="background-color:<?php echo get_sub_field('drm_bg_color'); ?>"<?php endif ?> >
 			<div class="container py-5">
 				<div class="row align-items-md-center ">
 					<div class="col-md-8 col-12 ">
@@ -2791,7 +2791,7 @@
 
 
 	<?php elseif( get_row_layout() == 'video_content_grid_module' ): ?>
-		<section class="video-content-grid-module" <?php if (get_sub_field('vcgm_bg_color')): ?> style="background-color: <?php echo get_sub_field('vcgm_bg_color'); ?>"<?php endif ?>>
+		<section class="video-content-grid-module<?php if (get_sub_field('vcgm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" <?php if (get_sub_field('vcgm_bg_color')): ?> style="background-color: <?php echo get_sub_field('vcgm_bg_color'); ?>"<?php endif ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 				<?php if (get_sub_field('vcgm_section_heading')): ?>
 					<h2 class="vcgm-section-heading"><?php echo get_sub_field('vcgm_section_heading') ?></h2>
@@ -3382,7 +3382,7 @@
 			    	<?php endif ?>
 		    	</div>
 		    </div><?php if (get_sub_field('bm_style') == 'style-1'):?>
-				<div class="row pt-3 bm-style-1 bm-wrap1">
+				<div class="row bm-style-1 bm-wrap1">
 				<?php if (have_rows('bm_items')): while ( have_rows('bm_items') ) : the_row(); ?>
 					
 					<div class="col-sm-6 col-lg-4">
@@ -3467,7 +3467,7 @@
 
 <?php elseif( get_row_layout() == 'destination_page_resource_module' ): ?>
 <?php if (get_sub_field('drm_show')): ?>
-<section class="dest-resource-module" <?php if (get_sub_field('drm_bg_color')): ?>style="background-color:<?php echo get_sub_field('drm_bg_color'); ?>"<?php endif ?> <?php if (get_sub_field('drm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('drm_bg_img'); ?>');"<?php endif ?> >
+<section class="dest-resource-module<?php if (get_sub_field('drm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" <?php if (get_sub_field('drm_bg_color')): ?>style="background-color:<?php echo get_sub_field('drm_bg_color'); ?>"<?php endif ?> <?php if (get_sub_field('drm_bg_img')): ?>style="background-image:url('<?php echo get_sub_field('drm_bg_img'); ?>');"<?php endif ?> >
 	<div class="container py-5">
 		<div class="row align-items-md-center drm-item">
 			<div class="col-md-7 col-12 ">
@@ -4104,7 +4104,7 @@
 						$link_title = $haum_cta['title'];
 						$link_target = $haum_cta['target'] ? $haum_cta['target'] : '_self';
 						?>
-						<a class="btn haum-cta" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+						<a class="haum-cta" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
 					<?php endif; ?>
 				</div>
 				<div class="haum-right">
@@ -4174,7 +4174,7 @@
 
 			                    <div class="tab-pane fade <?php if (get_row_index()==1): ?>show active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>" role="tab" aria-labelledby="v-pills-<?php echo get_row_index(); ?>-tab" role="tab">
 			                    	<div class="d-lg-none" id="heading-<?php echo get_row_index() ?>">
-					                	<a class="col-12 nav-link mb-3 p-2" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
+					                	<a class="col-12 nav-link mb-3 p-2" data-toggle="collapse" href="#collapse-<?php echo get_row_index() ?>" aria-label ="<?php echo get_sub_field('hcapm_sub_heading') ?>" aria-expanded="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>" aria-controls="collapse-<?php echo get_row_index() ?>">
 					                    	
 											<?php
 											$icon = get_sub_field('hcapm_icon');
@@ -4228,7 +4228,7 @@
 													$hcap_cta1_title = $hcap_cta1['title'];
 													$hcap_cta1_target = $hcap_cta1['target'] ? $hcap_cta1['target'] : '_self';
 													?>
-													<a class="btn hcap-cta1" href="<?php echo esc_url( $hcap_cta1_url ); ?>" target="<?php echo esc_attr( $hcap_cta1_target ); ?>"><?php echo esc_html( $hcap_cta1_title ); ?></a>
+													<a class="hcap-cta1" href="<?php echo esc_url( $hcap_cta1_url ); ?>" target="<?php echo esc_attr( $hcap_cta1_target ); ?>"><?php echo esc_html( $hcap_cta1_title ); ?></a>
 												<?php endif; ?>
 
 												<?php 
@@ -4238,7 +4238,7 @@
 													$hcapm_cta2_title = $hcapm_cta2['title'];
 													$hcapm_cta2_target = $hcapm_cta2['target'] ? $hcapm_cta2['target'] : '_self';
 													?>
-													<a class="btn hcap-cta2" href="<?php echo esc_url( $hcapm_cta2_url ); ?>" target="<?php echo esc_attr( $hcapm_cta2_target ); ?>"><?php echo esc_html( $hcapm_cta2_title ); ?></a>
+													<a class="hcap-cta2" href="<?php echo esc_url( $hcapm_cta2_url ); ?>" target="<?php echo esc_attr( $hcapm_cta2_target ); ?>"><?php echo esc_html( $hcapm_cta2_title ); ?></a>
 												<?php endif; ?>
 
 											</div>
@@ -4330,7 +4330,7 @@
 
 	<?php elseif( get_row_layout() == 'products_gallery_with_thumbnail' ): ?>
 		<section class="products-slider-with-thumbnails" id="products-slider-with-thumbnails<?php echo $i ?>">
-	        <div class="container">
+	        <div class="container <?php echo !empty(get_sub_field('pgwt_container_padding')) ? get_sub_field('pgwt_container_padding') : 'py-5' ?>"">
 		        <div class="pgwt-carousel">
 	                <div id="slider" class="slides pgwt-slider-for popup-gallery">
 				        <?php $images = get_sub_field('pgwt_carousel');

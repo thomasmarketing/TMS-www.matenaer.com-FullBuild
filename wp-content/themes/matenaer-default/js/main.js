@@ -25,7 +25,7 @@
   });*/
 
   // Navigation Mobile Arrow
-  $('#main-menu .menu-item-has-children > .nav-link, #main-menu .dropdown-menu .menu-item-has-children > .dropdown-item, #top-line-menu .menu-item-has-children > .nav-link').after("<span class='m-subnav-arrow dropdown-toggle' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'></span>");
+  $('#main-menu .menu-item-has-children > .nav-link, #main-menu .dropdown-menu .menu-item-has-children > .dropdown-item, #top-line-menu .menu-item-has-children > .nav-link').after("<span class='m-subnav-arrow dropdown-toggle' aria-label= 'Dropdown Toggle' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'></span>");
   $('.site-nav-container-screen').on('click', function() {
     $('.navbar-close-toggler').trigger('click');
   });
@@ -924,7 +924,7 @@ if(initialBG){
         arrows: false,
         fade: false,
         asNavFor: sliderNavId,
-        adaptiveHeight:true,
+        // adaptiveHeight:true,
       });
 
       $(sliderNavId).slick({
@@ -937,6 +937,18 @@ if(initialBG){
         focusOnSelect: true,
         accessibility: true,
         responsive: [
+           {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 7
+          }
+        },
+          {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 6
+          }
+        },
         {
           breakpoint: 992,
           settings: {

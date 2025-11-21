@@ -149,7 +149,7 @@
       background: transparent linear-gradient(180deg, #00476C 0%, #002031 100%) 0% 0% no-repeat padding-box !important;
       border: 0;
       &::before{
-        background: rgba($primary,0.5); 
+        background: $cta; 
       }
     }
 

@@ -156,6 +156,9 @@
 	padding: rem(2) rem(2) 0;
   	border-color: white;
 	color: white;
+	.material-icons{
+		font-size: 33px;
+	}
 }
 
 @include media-breakpoint-up(lg) {
@@ -237,6 +240,7 @@
 					}
 					
 				}
+				
 		}
 	}
 	@include media-breakpoint-down(md) {
@@ -301,8 +305,8 @@
 }
 
 .m-subnav-arrow {
-	width: rem(50);
-	height: rem(41);
+	width: 50px;
+	height: 50px;
 	position: absolute;
 	z-index: 1;
 	top: 0;
@@ -326,7 +330,7 @@
 }
 
 .main-menu {
-	padding-top: rem(13);
+	// padding-top: rem(13);
 	.nav-link {
 		padding: $nav-spacing-mobile;
 		color: $nav-color;
@@ -440,9 +444,14 @@
 			&:focus {
 				.nav-link { 
 					color: $white;
-					background-color: $secondary;
+					background-color: $primary;
 					font-weight: bold;
 				}
+				.m-subnav-arrow{
+						&::after{
+							color: $white;
+						}
+					}
 			}
 
 			.nav-link {
@@ -450,22 +459,49 @@
 				&:hover,
 				&:focus {
 					color: $white;
-					background-color: $secondary;
+					background-color: $primary;
+					@include media-breakpoint-up(lg) {
+						background-color: transparent !important;
+						color: $primary !important;
+					}
+					.m-subnav-arrow{
+						&::after{
+							color: $white;
+						}
+					}
 				}
 			}
 
 			&.current-menu-item {
 				> .nav-link {
 					color: $white;
-					background-color: $secondary;
+					background-color: $primary;
+					@include media-breakpoint-up(lg) {
+						background-color: transparent !important;
+						color: $primary !important;
+					}
 				}
+				.m-subnav-arrow{
+						&::after{
+							color: $white;
+						}
+					}
 			}
 
 			&.current-menu-ancestor {
 				> .nav-link {
 					color: $white;
-					background-color: $secondary;
+					background-color: $primary;
+					@include media-breakpoint-up(lg) {
+						background-color: transparent !important;
+						color: $primary !important;
+					}
 				}
+				.m-subnav-arrow{
+						&::after{
+							color: $white;
+						}
+					}
 			}
 
 			.active {
@@ -528,7 +564,7 @@
 .site-nav-container {
     width: 100vw;
     max-height: 100vh;
-    padding-bottom: rem(15);
+    padding-bottom: rem(60);
     position: fixed;
     z-index: 999;
     left: -120%;
@@ -555,7 +591,7 @@
 }
 
 .snc-header {
-	padding: rem(27) rem(13) rem(24) rem(30);
+	padding: 17px rem(13) 17px rem(30);
 	margin: 0;
 	@include display(flex);
 	@include justify-content(space-between);
@@ -623,6 +659,9 @@
 .m-subnav-arrow.active1 {
 	@include media-breakpoint-down(lg) {
 	    @include transform(rotate(180deg));
+		&::after{
+			color: $white;
+		}
 	}
 }
 /*ul.dropdown-menu.active1 {
@@ -702,10 +741,10 @@
     &:hover,
     &:focus{
       color: $white !important;
-      background: transparent linear-gradient(180deg, #00476C 0%, #002031 100%) 0% 0% no-repeat padding-box !important;
+      background: $primary !important;
       border: 0;
       &::before{
-        background: rgba($primary,0.5); 
+        background: $cta; 
       }
     }
 
@@ -756,10 +795,22 @@
 			&:hover,
 			&:focus{
 			color: $white !important;
-			background: transparent linear-gradient(180deg, #00476C 0%, #002031 100%) 0% 0% no-repeat padding-box !important;
+			background: $primary !important;
 			border: 0;
 			&::before{
-				background: rgba($primary,0.5); 
+				background: $cta; 
 			}
 		}
+}
+.navbar-dark{
+	.navbar-nav{
+		li.active{
+			>.nav-link{
+				@include media-breakpoint-up(lg) {
+					color: $primary;
+				}
+				
+			}
+		}
+	}
 }
