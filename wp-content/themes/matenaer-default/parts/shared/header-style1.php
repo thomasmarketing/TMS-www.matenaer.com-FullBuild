@@ -23,7 +23,7 @@
 				</div>
 				<div class="sh-tl-utility">
 
-					<span class="sh-search"><a href="#search" class="search-form-tigger" data-toggle="search-form" aria-label="Search">
+					<span class="sh-search"><a href="#search" title="Search" class="search-form-tigger" data-toggle="search-form" aria-label="Search">
 						<?php 
 							$search_icon = get_field('sh_uicon_search', 'option');
 							if( !empty( $search_icon ) ): ?>
@@ -122,7 +122,7 @@
 								<span class="material-icons">menu</span>
 							</button>
 
-							<span class="sh-search mx-md-3 d-lg-none"><a href="#search" class="search-form-tigger" data-toggle="search-form" aria-label="Search">
+							<span class="sh-search mx-md-3 d-lg-none"><a href="#search" title="Search" class="search-form-tigger" data-toggle="search-form" aria-label="Search">
 								<?php 
 								$search_icon = get_field('sh_uicon_search_mob', 'option');
 								if( !empty( $search_icon ) ): ?>

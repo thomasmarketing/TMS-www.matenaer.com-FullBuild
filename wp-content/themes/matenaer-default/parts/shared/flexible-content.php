@@ -33,7 +33,7 @@
                 <div class="fwc-wrap">
                     <div class="container">
                     <?php if( get_sub_field('section_body')): ?>
-                        <h3 class="fwc-para"><?php echo get_sub_field('section_body'); ?></h3>
+                        <h2 class="fwc-para"><?php echo get_sub_field('section_body'); ?></h2>
                          <?php endif; ?>
                         <?php 
 						$link = get_sub_field('cta_button');
@@ -43,7 +43,7 @@
 						    $link_target = $link['target'] ? $link['target'] : '_self';
 						    ?> 
                         
-                        	<a href="<?php echo esc_url( $link_url ); ?>" class="btn btn-alt-on-color fwc-cta" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                        	<a href="<?php echo esc_url( $link_url ); ?>" class="btn-alt2" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
                         <?php endif; ?>
                     </div>
                 </div>
@@ -57,38 +57,40 @@
 	<?php elseif( get_row_layout() == 'full_width_cta1' ): ?>
 		<section class="fullwidth-cta1 <?php if (get_sub_field('cvp2_para_img')): ?> fixed-bg<?php endif ?>" id="fullwidth-cta1<?php echo $i ?>" <?php if (get_sub_field('fwc_bg')): ?>style="background-image: url(<?php echo get_sub_field('fwc_bg'); ?>);"<?php endif ?>>
 			 <div class="container">
-			 	<?php if (get_sub_field('fwc_heading')): ?>
+			 	<div class="fwc-wrapper">
+					<?php if (get_sub_field('fwc_heading')): ?>
 		    		<h2 class="fwc-heading"><?php echo get_sub_field('fwc_heading'); ?></h2>
-		    	<?php endif ?>
+					<?php endif ?>
 
-				<?php if (get_sub_field('fwc_sub_heading')): ?>
-		    		<h3 class="fwc-sub-heading"><?php echo get_sub_field('fwc_sub_heading'); ?></h3>
-		    	<?php endif ?>
+					<?php if (get_sub_field('fwc_sub_heading')): ?>
+						<h3 class="fwc-sub-heading"><?php echo get_sub_field('fwc_sub_heading'); ?></h3>
+					<?php endif ?>
 
-		    	<?php if (get_sub_field('fwc_description')): ?>
-		    		<p class="fwc-description"><?php echo get_sub_field('fwc_description'); ?></p>
-		    	<?php endif ?>
+					<?php if (get_sub_field('fwc_description')): ?>
+						<p class="fwc-description"><?php echo get_sub_field('fwc_description'); ?></p>
+					<?php endif ?>
 
-		    	<div class="fwc-cta-wrap">
+					<div class="fwc-cta-wrap">
+						<?php 
+					$link = get_sub_field('fwc_cta1');
+					if( $link ): 
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+						$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
+						<a class="fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					<?php endif; ?>
+
 					<?php 
-				$link = get_sub_field('fwc_cta1');
-				if( $link ): 
-				    $link_url = $link['url'];
-				    $link_title = $link['title'];
-				    $link_target = $link['target'] ? $link['target'] : '_self';
-				    ?>
-				    <a class="fwc-cta1" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-				<?php endif; ?>
-
-				<?php 
-				$link = get_sub_field('fwc_cta2');
-				if( $link ): 
-				    $link_url = $link['url'];
-				    $link_title = $link['title'];
-				    $link_target = $link['target'] ? $link['target'] : '_self';
-				    ?>
-				    <a class="fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-				<?php endif; ?>
+					$link = get_sub_field('fwc_cta2');
+					if( $link ): 
+						$link_url = $link['url'];
+						$link_title = $link['title'];
+						$link_target = $link['target'] ? $link['target'] : '_self';
+						?>
+						<a class="fwc-cta2" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					<?php endif; ?>
+				</div>
 				</div>
 			 </div>
 		</section>
@@ -139,7 +141,7 @@
 		</section>	
 
  	<?php elseif( get_row_layout() == 'multiple_columns' ): ?>
- 		<section class="multiple-cols-module<?php if (get_sub_field('mc_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="multiple_columns<?php echo $i ?>" <?php if( get_sub_field('mc_bg_color')): ?>style="background-color: <?php echo get_sub_field('mc_bg_color');?>" <?php endif; ?>>
+ 		<section class="multiple-cols-module<?php if (get_sub_field('mc_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="<?php echo get_sub_field('mc_section_id'); ?>" <?php if( get_sub_field('mc_bg_color')): ?>style="background-color: <?php echo get_sub_field('mc_bg_color');?>" <?php endif; ?>>
 
 		 	<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 		 		<div class="row">
@@ -150,7 +152,7 @@
 						<p class="column-subtext col-12"><?php echo get_sub_field('section_subtext'); ?></p>
 					<?php endif; ?>
 				</div>
-				<section class="row">
+				<section class="row mc-wrapper">
 					<?php if (get_sub_field('number_columns') == '2') {
 							$gridClass = 'col-md-6';
 						} else if (get_sub_field('number_columns') == '3') {
@@ -347,15 +349,15 @@
 				<div class="row">
 					<div class="col-md-6 on-light-bg">
 						    <div class="hw-txt">
-						    	<h1 class="lb-title"><?php echo get_sub_field('lh_heading'); ?></h1>
-						        <h2><?php echo get_sub_field('lh_sub_heading'); ?></h2>
+						    	<h2 class="lb-title"><?php echo get_sub_field('lh_heading'); ?></h2>
+						        <h1><?php echo get_sub_field('lh_sub_heading'); ?></h1>
 						        <p><?php echo get_sub_field('lh_intro_text'); ?></p>
 						    </div>
 					</div>    
 				    <div class="col-md-6 on-color-bg">
 					    <div class="hw-txt">                
-					        <h1><?php echo get_sub_field('right_heading'); ?></h1>
-					        <h2><?php echo get_sub_field('right_subheading'); ?></h2>
+					        <h2><?php echo get_sub_field('right_heading'); ?></h2>
+					        <h1><?php echo get_sub_field('right_subheading'); ?></h1>
 					        <p><?php echo get_sub_field('right_intro_text'); ?></p>
 					    </div>
 				    </div>
@@ -2243,7 +2245,7 @@
 
 	<?php elseif( get_row_layout() == 'featured_listing_module' ): ?>
     	<?php $listingType = get_sub_field('flm_listing_type') ?>
-		<section class="featured-listing-module<?php if (get_sub_field('flm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="<?php echo $listingType .  $i; ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
+		<section class="featured-listing-module<?php if (get_sub_field('flm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="<?php echo get_sub_field('flm_section_id'); ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 
 				<?php 
@@ -4050,7 +4052,7 @@
 			$link_title = $cta_one['title'];
 			$link_target = $cta_one['target'] ? $cta_one['target'] : '_self';
 			?>
-            <a class="btn btn-primary" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+            <a class="hfwc-rfq-cta" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
             <?php endif; ?>
 
             <?php
@@ -4060,7 +4062,7 @@
 			$link_title = $cta_two['title'];
 			$link_target = $cta_two['target'] ? $cta_two['target'] : '_self';
 			?>
-            <a class="btn btn-secondary" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
+            <a class="hfwc-contact-cta" href="<?php echo esc_url($link_url); ?>"><span><?php echo esc_html($link_title); ?></span></a>
             <?php endif; ?>
 
           </div>
@@ -4166,6 +4168,30 @@
 		    	<?php endif ?>
 
 		        <div class="hcap-main-wrapper">
+					
+					
+		            <div class="hcap-right-wrap d-none d-lg-block">
+		                <!-- Tabs nav -->
+		            	<?php if (have_rows('hcapm_add_capability')): ?>
+		                <div class="nav nav-pills nav-pills-custom" id="v-pills-<?php echo get_row_index() ?>-tab" role="tablist" aria-orientation="vertical" <?php if (get_sub_field('hcapm_bg_image')): ?>style="background-image: url(<?php echo get_sub_field('hcapm_bg_image'); ?>);"<?php endif ?>>
+		            		<?php while (have_rows('hcapm_add_capability')): the_row(); ?>
+							<?php 
+								$cap_bg = get_sub_field('hcapm_bg_image');
+								?>
+			                    <a class="col-12  nav-link  <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" data-bg="url('<?php echo esc_url($cap_bg); ?>')" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>">
+									<div class="hcap-wrap">
+			                    	
+			                        <?php if (get_sub_field('hcapm_sub_heading')): ?>
+			                        	<span class="hcap-pill-title"><?php echo get_sub_field('hcapm_sub_heading') ?></span>
+			                        <?php endif ?>
+									</div>
+			                    </a>
+		            		
+		            		<?php endwhile ?>
+		               	</div>
+		            	<?php endif ?>
+		            </div>
+
 					<div class="hcap-left-wrap">
 		                <!-- Tabs content -->
 		                <?php if (have_rows('hcapm_add_capability')): ?>
@@ -4250,28 +4276,6 @@
 			                </div>
 		            	<?php endif ?>
 		            </div>
-					
-		            <div class="hcap-right-wrap d-none d-lg-block">
-		                <!-- Tabs nav -->
-		            	<?php if (have_rows('hcapm_add_capability')): ?>
-		                <div class="nav nav-pills nav-pills-custom" id="v-pills-<?php echo get_row_index() ?>-tab" role="tablist" aria-orientation="vertical" <?php if (get_sub_field('hcapm_bg_image')): ?>style="background-image: url(<?php echo get_sub_field('hcapm_bg_image'); ?>);"<?php endif ?>>
-		            		<?php while (have_rows('hcapm_add_capability')): the_row(); ?>
-							<?php 
-								$cap_bg = get_sub_field('hcapm_bg_image');
-								?>
-			                    <a class="col-12  nav-link  <?php if (get_row_index()==1): ?>active<?php endif ?>" id="v-pills-<?php echo get_row_index(); ?>-tab" data-toggle="pill" data-bg="url('<?php echo esc_url($cap_bg); ?>')" href="#v-pills-<?php echo get_row_index(); ?>" role="tab" aria-controls="v-pills-<?php echo get_row_index(); ?>" aria-selected="<?php if (get_row_index()==1): ?>true<?php else: ?>false<?php endif ?>">
-									<div class="hcap-wrap">
-			                    	
-			                        <?php if (get_sub_field('hcapm_sub_heading')): ?>
-			                        	<span class="hcap-pill-title"><?php echo get_sub_field('hcapm_sub_heading') ?></span>
-			                        <?php endif ?>
-									</div>
-			                    </a>
-		            		
-		            		<?php endwhile ?>
-		               	</div>
-		            	<?php endif ?>
-		            </div>
 
 
 		            
@@ -4283,7 +4287,7 @@
 
 <!-- Featured Image with Content Module Start -->
   <?php elseif( get_row_layout() == 'featured_image_with_content_module' ): ?>
-	<section class="featured-image-with-content-module" <?php if (get_sub_field('fiwcm_bg_color')): ?> style="background-color: <?php echo get_sub_field('fiwcm_bg_color'); ?>"<?php endif ?>>
+	<section id ="<?php echo get_sub_field('fiwcm_section_id'); ?>" class="featured-image-with-content-module" <?php if (get_sub_field('fiwcm_bg_color')): ?> style="background-color: <?php echo get_sub_field('fiwcm_bg_color'); ?>"<?php endif ?>>
 		<div class="container <?php echo !empty(get_sub_field('fiwcm_container_padding')) ? get_sub_field('fiwcm_container_padding') : 'py-5' ?>">
 			
 				<?php if (get_sub_field('fiwcm_section_heading_above_image')): ?>

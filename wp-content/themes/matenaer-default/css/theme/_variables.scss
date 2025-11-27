@@ -40,6 +40,7 @@ $peacock:#007BA0;
 $sub-nav-bg:#F5F5F5;
 $nav-border:#C9C9C9;
 $cta:#A6C3D7;
+$border:#E2E2E2;
 //Body Variables
 $body-bg : $white;
 $body-color: $black;
@@ -57,7 +58,7 @@ $font-family-base: 			  "Oxygen", sans-serif;
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
-$body-font-size:			  rem(18);
+$body-font-size:			  rem(16);
 
 $font-weight-lighter:         lighter !default;
 $font-weight-light:           300 !default;
@@ -71,8 +72,8 @@ $line-height-base:            1.5625 !default;
 $h1-font-size:                rem(58) !default;
 $h2-font-size:                rem(52) !default;
 $h3-font-size:                rem(36) !default;
-$h4-font-size:                rem(28) !default;
-$h5-font-size:                rem(19) !default;
+$h4-font-size:                rem(32) !default;
+$h5-font-size:                rem(20) !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-font-family:        "Michroma", sans-serif !default;
@@ -97,7 +98,7 @@ $lead-font-weight:            300 !default;
 $small-font-size:             80% !default;
 
 $blockquote-small-font-size:  $small-font-size !default;
-$blockquote-font-size:        $font-size-base * 1.25 !default;
+$blockquote-font-size:        rem(22);
 
 /*Navigation Variables*/
 $nav-color: $black;

@@ -39,7 +39,9 @@
 }
 
 .site-logo {
-	max-width: rem(350);
+	img{
+		max-width: rem(310);
+	}
 }
 
 .utility-nav {
@@ -113,8 +115,37 @@
 }
 
 .search-form-tigger {
+	img{
+		max-width: 20px;
+	}
 	.material-icons {
 		vertical-align: middle;
+	}
+	@include media-breakpoint-up(md) {
+		img{
+			max-width: 100%;
+		}
+	}
+}
+.cms_phone{
+	img{
+		max-width: 20px;
+	}
+	@include media-breakpoint-up(md) {
+		img{
+			max-width: 100%;
+		}
+	}
+}
+
+.cms_email{
+	img{
+		max-width: 25px;
+	}
+	@include media-breakpoint-up(md) {
+		img{
+			max-width: 100%;
+		}
 	}
 }
 
@@ -135,6 +166,9 @@
 				max-width: rem(250);
 			}
 			@include media-breakpoint-up(xl) {
+				max-width: rem(300);;
+			}
+			@media screen and (min-width: 1400px) {
 				max-width: 100%;
 			}
 		}

@@ -2885,8 +2885,14 @@ body {
 }
 
 .ginput_container_checkbox .gfield_checkbox .gfield-choice-input{
-  vertical-align: middle !important;
+  vertical-align: top !important;
+  margin-top: 6px !important;
 }
+// @media only screen and (min-width:559px){
+// .ginput_container_checkbox .gfield_checkbox .gfield-choice-input{
+//   vertical-align: top !important;
+// }
+// }
 
 
 .gform_ajax_spinner{
@@ -2943,4 +2949,8 @@ body {
 
 .gform_wrapper.gravity-theme #field_submit, .gform_wrapper.gravity-theme .gform_footer{
   justify-content: center;
+}
+
+.gform_wrapper.gravity-theme .gfield input, .gform_wrapper.gravity-theme .gfield select{
+  padding: 0 8px !important;
 }

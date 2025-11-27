@@ -61,11 +61,15 @@ ul:not([class]) {
     position: relative;
     margin-bottom: rem(12);
     padding-left: rem(12);
-    font-weight: 400;
+    font-weight: normal;
     color: $dark-grey;
+    font-size: rem(18);
+    line-height: rem(28);
     a {
       text-decoration: none;
       font-weight: normal;
+      font-size: rem(18);
+      line-height: rem(28);
     }
     &:after {
       content: '';
@@ -75,26 +79,26 @@ ul:not([class]) {
       position: absolute;
       top: rem(12);
       left: 0;
-      background: $primary;
+      background: $peacock;
       border-radius: 50%;
     }
     ul, ul:not([class]) {
       margin: rem(8) 0 0 0;
-      padding-left: rem(22);
+      padding-left: rem(60);
       li, li:not([class]) {
         padding-left: rem(12);
-        color: $medium-gray;
+        color: $dark-grey;
         font-weight: 400;
         margin-bottom: rem(12);
         &:after {
           content: '';
-          width: 4px;
-          height: 4px;
+          width: 5px;
+          height: 5px;
           display: block;
           position: absolute;
           top: rem(12);
           left: 0;
-          background: $primary;
+          background: $peacock;
           border-radius: 50%;
         }
       }
@@ -107,7 +111,7 @@ ol {
   list-style-type: decimal; 
   list-style-position: inside; 
   margin-bottom: rem(12);
-  padding-left: 0;
+  padding-left: rem(15);
   list-style: none;
   counter-reset: custom-counter;
   > li {
@@ -115,11 +119,12 @@ ol {
     counter-increment: custom-counter;
     color: $dark-grey;
     margin-bottom: rem(12);
-    padding-left: em(15);
-    font-weight: 400;
+    padding-left: em(20);
+    font-size: rem(18);
+    line-height: rem(28);
     &:before {
-      content: counter(custom-counter) "  ";
-      color: $primary;
+      content: counter(custom-counter) ". ";
+      color: $peacock;
       position: absolute;
       top: 0;
       left: 0;
@@ -129,21 +134,23 @@ ol {
     	margin: rem(8) 0 0 0;
       counter-reset: custom-counter;
       position: relative;
-      padding-left: rem(22);
+      padding-left: rem(58);
       > li {
         position: relative;
         counter-increment: custom-counter;
-        font-weight: 400;
-        color: $medium-gray;
+        font-weight: normal;
+        font-size: rem(18);
+       line-height: rem(28);
+        color: $dark-grey;
         padding-left: em(12);
 
         &:before {
           content: counter(custom-counter, lower-alpha) "  ";
-          color: $primary;
+          color: $peacock;
           position: absolute;
           top: 0;
           left: 0;
-          font-weight: 400;
+          font-weight: 700;
         }
       }
     }
@@ -152,18 +159,18 @@ ol {
       padding-left: rem(22);
       font-weight: 400;
       li, li:not([class]) {
-        font-size: 1em;
-        padding-left: em(14);
-        color: $medium-gray;
+        font-size: rem(18);
+        line-height: rem(28);
+        color: $dark-grey;
         &:after {
           content: '';
-          width: 4px;
-          height: 4px;
+          width: 5px;
+          height: 5px;
           display: block;
           position: absolute;
           top: em(10);
           left: 0;
-          background: $medium-gray;
+          background: $peacock;
           border-radius: 50%;
         }
       }

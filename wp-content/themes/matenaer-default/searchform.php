@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) || exit;
 		<span class="input-group-append">
 			<!-- <input class="submit btn-primary" id="searchsubmit" name="submit" type="submit"
 			value="<?php esc_attr_e( 'Search', 'understrap' ); ?>"> -->
-			<button type="submit" class="submit btn-primary search-btn tse-remove-border" aria-label="Search Submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+			<button type="submit" title="Search" class="submit search-btn tse-remove-border" aria-label="Search Submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 		</span>
 	</div>
 </form>

@@ -36,30 +36,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 					endif;
 					?>
                    
-
-			<div class="author-info-wrap">
-				<h3 class="aiw-title">Discussion</h3>
-				<div class="aiw-content">
-				<div class="row">
-					<div class="col-12 col-md-3">
-						<div class="author-avatar">
-			           <?php echo get_avatar( get_the_author_meta('user_email'), '160', '' ); ?>
-			       		</div>
-					</div>
-					<div class="col-12 col-md-9">
-			           <div class="author-info">
-			              <div class="author-info-top">
-			              	<h4 class="author-name"><?php the_author_link(); ?></h4>
-			              	<span class="author-posted-date"><time class="post-date" datetime="<?php echo get_the_date('F j, Y'); ?>" itemprop="datePublished"><?php echo get_the_date('m/d/Y'); ?></time></span>
-			              </div>
-			              <div class="author-info-description">
-			                <?php the_author_meta('description'); ?>
-			              </div>
-			           </div>
-					</div>
-				</div>
-			</div>
-
 <?php endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->

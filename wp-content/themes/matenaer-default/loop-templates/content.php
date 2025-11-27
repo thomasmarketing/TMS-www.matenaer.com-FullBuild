@@ -11,13 +11,19 @@ defined( 'ABSPATH' ) || exit;
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
     <div class="row">
-        <div class="col-12 col-lg-3">
-            <?php 
-			$featured_img_url = get_the_post_thumbnail_url($post->ID, 'thumbnail');
-			$featured_title = ucwords(get_the_title());
-			echo '<img src="'.$featured_img_url.'" alt="'.$featured_title.'" title="'.$featured_title.'" class="featured-img">';
-			//echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
-        </div>
+        <?php 
+        if ( has_post_thumbnail( $post->ID ) ) : ?>
+    <div class="col-12 col-lg-3">
+        <?php 
+        $featured_img_url = get_the_post_thumbnail_url( $post->ID, 'thumbnail' );
+        $featured_title = ucwords( get_the_title() );
+        ?>
+        <img src="<?php echo esc_url( $featured_img_url ); ?>" 
+             alt="<?php echo esc_attr( $featured_title ); ?>" 
+             title="<?php echo esc_attr( $featured_title ); ?>" 
+             class="featured-img">
+    </div>
+<?php endif; ?>
         <div class="col-12 col-lg-9">
             <header class="entry-header">
 

@@ -44,6 +44,7 @@ h3,
 .h3 {
   font-size: $h3-font-size;
   color: $peacock;
+  text-transform: uppercase;
 }
 
 h4,
@@ -70,6 +71,8 @@ h6,
 }
 
 p {
+  // font-size: rem(16);
+  line-height: rem(26);
   a{
     color: $link-color;
     text-decoration: underline;

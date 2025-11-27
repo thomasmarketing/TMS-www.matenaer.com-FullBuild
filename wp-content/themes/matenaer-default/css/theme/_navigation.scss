@@ -449,7 +449,7 @@
 				}
 				.m-subnav-arrow{
 						&::after{
-							color: $white;
+							// color: $white;
 						}
 					}
 			}
@@ -505,6 +505,11 @@
 			}
 
 			.active {
+				.m-subnav-arrow{
+						&::after{
+							color: $black;
+						}
+					}
 				> .dropdown-item {
 					color: $primary;
 					background-color: $sub-nav-bg;

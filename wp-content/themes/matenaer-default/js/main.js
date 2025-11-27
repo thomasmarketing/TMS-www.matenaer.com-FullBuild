@@ -823,7 +823,7 @@
   // Homepage Capability Module
   $('.homepage-capabilities-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
 
-  $('.homepage-capabilities-module .tab-pane:not(:last-child) div[role="tabpanel"] a:last-of-type').on('blur', function() {
+  $('.homepage-capabilities-module .tab-pane:not(:last-child) div[role="tabpanel"] .hcap-cta2').on('blur', function() {
     $('.homepage-capabilities-module .nav-pills-custom a.active').next('.nav-link').trigger('click');
     setTimeout(function() {
       $('.homepage-capabilities-module .nav-pills-custom a:not(.active)').attr('tabindex', '-1');
@@ -833,7 +833,6 @@
 
   });
 
-  //  TAB BACKGROUND CHANGE (this must be OUTSIDE the blur function)
 $('.homepage-capabilities-module .nav-pills-custom .nav-link').on('click', function () {
     var bg = $(this).data('bg');
 
@@ -923,6 +922,7 @@ if(initialBG){
         slidesToScroll: 1,
         arrows: false,
         fade: false,
+        infinite:false,
         asNavFor: sliderNavId,
         // adaptiveHeight:true,
       });
@@ -931,6 +931,7 @@ if(initialBG){
         slidesToShow: 9,
         slidesToScroll: 1,
         asNavFor: sliderId,
+        infinite:false,
         prevArrow: '<span class="slick-prev-wrap"><a class="slick-prev" href="javascript:void(0)" aria-label="Previous">Prev</a></span>',
         nextArrow: '<span class="slick-next-wrap"><a class="slick-next" href="javascript:void(0)" aria-label="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a></span>',
         dots: false,

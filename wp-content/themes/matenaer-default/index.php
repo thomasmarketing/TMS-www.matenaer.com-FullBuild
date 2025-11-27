@@ -45,15 +45,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<?php while ( have_posts() ) : the_post(); ?>
 						<div class="blog-sinlge-row <?php if (has_post_thumbnail()): ?> blog-sinlge-row-img <?php endif; ?>">
-							<div class="post-image">
+							
 
 							<?php if (has_post_thumbnail()): ?>
 							<?php $title= get_the_title(); ?>
-							<?php the_post_thumbnail('large',array('alt' =>$title, 'title' =>$title)); ?>
+								<div class="post-image">
+								<?php the_post_thumbnail('large',array('alt' =>$title, 'title' =>$title)); ?>
+								</div>
 			    			<?php endif; ?>
 			    	
 
-						    </div>
+						    
 						    <div class="bsr-content">
 		                        <h3 class="post-title"><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 		                        <?php the_excerpt(); ?>
