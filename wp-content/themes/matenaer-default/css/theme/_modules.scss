@@ -3620,7 +3620,7 @@ iframe {
 	display: none;
 	@include media-breakpoint-up(lg) {
 		display: block;
-		margin-bottom: rem(25);
+		margin-bottom: rem(15);
 	}
 }
 .hcap-wrap{

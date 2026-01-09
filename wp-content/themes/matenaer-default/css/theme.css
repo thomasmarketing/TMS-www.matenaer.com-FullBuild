@@ -26331,7 +26331,7 @@ iframe {
 @media (min-width: 992px) {
   .homepage-capabilities-module .hcap-content-icon {
     display: block;
-    margin-bottom: 1.5625rem;
+    margin-bottom: 0.9375rem;
   }
 }
 .homepage-capabilities-module > .container {
