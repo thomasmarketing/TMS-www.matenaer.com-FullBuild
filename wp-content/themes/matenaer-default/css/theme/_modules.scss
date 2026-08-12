@@ -7410,6 +7410,8 @@ aside.widget {
 
 /*============== featured listing module ============*/
 .featured-listing-module {
+	position: relative;
+	z-index: 1;
 	.flm-cta-wrap{
 		margin-top: rem(30);
 		text-align: center;
@@ -7473,6 +7475,18 @@ aside.widget {
 			border: 0;
 			&::before{
 				background: $cta; 
+			}
+		}
+	}
+	&.flm-2-col-list{
+		.flm-featured-listing{
+			.featured_listing{
+				@include media-breakpoint-up(lg) {
+					column-count: 2;
+					  li{
+						break-inside: avoid-column;
+					}
+				}
 			}
 		}
 	}

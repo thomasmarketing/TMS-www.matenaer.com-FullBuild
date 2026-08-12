@@ -237,6 +237,9 @@
 						font-size: $topnav-sub-font-size;
 						line-height: $topnav-sub-line-height;
 						font-weight: normal;
+						@include media-breakpoint-up(lg) {
+							line-height: $topnav-sub-line-height-desk;
+						}
 						}
 					}
 					

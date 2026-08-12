@@ -2245,7 +2245,7 @@
 
 	<?php elseif( get_row_layout() == 'featured_listing_module' ): ?>
     	<?php $listingType = get_sub_field('flm_listing_type') ?>
-		<section class="featured-listing-module<?php if (get_sub_field('flm_remove_bottom_margin')): ?> cond-wrapper <?php endif ?>" id="<?php echo get_sub_field('flm_section_id'); ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
+		<section class="featured-listing-module<?php if (get_sub_field('flm_remove_bottom_margin')): ?> cond-wrapper<?php endif ?><?php if (get_sub_field('flm_make_list_in_2_columns')): ?> flm-2-col-list<?php endif ?>" id="<?php echo get_sub_field('flm_section_id'); ?>" <?php if (get_sub_field('flm_bg_color')): ?> style="background-color: <?php echo get_sub_field('flm_bg_color'); ?>"<?php endif ?>>
 			<div class="container <?php echo !empty(get_sub_field('container_padding')) ? get_sub_field('container_padding') : 'py-5' ?>">
 
 				<?php 
@@ -2265,7 +2265,8 @@
 		    	<?php endif ?>
 
 		    	<?php if (have_rows('flm_items')): ?>
-		    	<div class="flm-featured-listing">
+			 	<div class="flm-featured-listing">
+					
 		    		<ul class="<?php echo $listingType; ?>">
 		    		<?php while ( have_rows('flm_items') ) : the_row(); ?>
 		    			<li class="flm-text"><?php echo get_sub_field('flm_text') ?></li>
