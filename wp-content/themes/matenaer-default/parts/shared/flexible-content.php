@@ -1403,7 +1403,9 @@
           				<?php 
 						$image = get_sub_field('lircm_image');
 						if( !empty( $image ) ): ?>
-						    <img class="lircm-tab-img" src="<?php echo esc_url($image['url' ]); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" />
+						    <a href="<?php echo esc_url($image['url']); ?>" class="lightbox">
+						        <img class="lircm-tab-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" title="<?php echo esc_attr($image['alt']); ?>" />
+						    </a>
 						<?php endif; ?>
           			</div>
 
